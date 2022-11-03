@@ -11,6 +11,7 @@ from rest_framework import routers
 from app.api import viwsets as cadmapsviewsets
 
 route = routers.DefaultRouter()
+#route = routers.SimpleRouter()
 route.register(r'mapeamento',cadmapsviewsets.CadMapViewSet,basename="Cad_Mapeamento")
 route.register(r'setores',cadmapsviewsets.CadSetoresViewSet,basename="Cad_setores")
 route.register(r'equipes',cadmapsviewsets.CadEquipesViewSet,basename="Cad_equipes")
