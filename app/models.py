@@ -16,6 +16,10 @@ class Cad_empresa(models.Model):
     cep_empresa = models.CharField(max_length=9)
     estado_empresa = models.CharField(max_length=40)
     telefone_empresa = models.CharField(max_length=15)
+    class Meta:
+        verbose_name = 'Cadastro de Empresa'
+    def __str__(self):
+        return self.nome_fantasia_empresa
 
 from django.db.models import Count
 class Cad_setores(models.Model):
@@ -23,18 +27,30 @@ class Cad_setores(models.Model):
     resposavel_setor = models.CharField(max_length=30)
     cargo_setor = models.CharField(max_length=30)
     contato_setor = models.CharField(max_length=30)
+    class Meta:
+        verbose_name = 'Cadastro de Setores'
+    def __str__(self):
+        return self.setor_nome
 
 
 class Cad_equipes(models.Model):
     nome = models.CharField(max_length=30)
     telefone = models.CharField(max_length=30)
     responsabilidade = models.CharField(max_length=30)
+    class Meta:
+        verbose_name = 'Cadastro de Equipe'
+    def __str__(self):
+        return self.nome
 
 class Cad_fornecedores(models.Model):
     fornecedor = models.CharField(max_length=30)
     cnpj = models.CharField(max_length=30)
     dpo = models.CharField(max_length=30)
     telefone = models.CharField(max_length=30)
+    class Meta:
+        verbose_name = 'Cadastro de Fornecedores'
+    def __str__(self):
+        return self.fornecedor
 
 class Cad_dpo(models.Model):
     nome = models.CharField(max_length=30)
@@ -46,10 +62,18 @@ class Cad_dpo(models.Model):
     endereco = models.CharField(max_length=30)
     cidade = models.CharField(max_length=30)
     estado = models.CharField(max_length=30)
+    class Meta:
+        verbose_name = 'Cadastro de DPO'
+    def __str__(self):
+        return self.nome
 
 class Cad_dados_previos(models.Model):
     questao_dados_previos = models.CharField(max_length=90)
     resposta = models.CharField(max_length=10)
+    class Meta:
+        verbose_name = 'Dados Prévio'
+    def __str__(self):
+        return self.questao_dados_previos
 
 class Cad_itens_auditaveis(models.Model):
     questao_itens_auditaveis = models.CharField(max_length=90)
@@ -61,6 +85,11 @@ class Cad_itens_auditaveis(models.Model):
     @property
     def fr(self):
         return (self.il ** 2 + self.icn ** 2)*((7-self.e) ** 2) 
+    
+    class Meta:
+        verbose_name = 'Cadastro de Itens Auditaveis'
+    def __str__(self):
+        return self.questao_itens_auditaveis
 
     
 class Cad_fator_de_risco(models.Model):
@@ -83,3 +112,7 @@ class Cad_Mapeamento(models.Model):
     menor = models.CharField(max_length=30)
     impacto_pessoal = models.CharField(max_length=30)
     missao_critica = models.CharField(max_length=30)
+    class Meta:
+        verbose_name = 'Mapeamento de Dado'
+    def __str__(self):
+        return self.dado
