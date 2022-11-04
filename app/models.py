@@ -9,6 +9,7 @@ from django.db import models
 
 
 class Cad_empresa(models.Model):
+    id = models.AutoField(primary_key=True)
     nome_fantasia_empresa = models.CharField(max_length=80)
     cnpj_empresa = models.CharField(max_length=18)
     endereco_empresa = models.CharField(max_length=80)
@@ -23,6 +24,7 @@ class Cad_empresa(models.Model):
 
 from django.db.models import Count
 class Cad_setores(models.Model):
+    id = models.AutoField(primary_key=True)
     setor_nome = models.CharField(max_length=30)
     resposavel_setor = models.CharField(max_length=30)
     cargo_setor = models.CharField(max_length=30)
@@ -34,6 +36,7 @@ class Cad_setores(models.Model):
 
 
 class Cad_equipes(models.Model):
+    id = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=30)
     telefone = models.CharField(max_length=30)
     responsabilidade = models.CharField(max_length=30)
@@ -43,6 +46,7 @@ class Cad_equipes(models.Model):
         return self.nome
 
 class Cad_fornecedores(models.Model):
+    id = models.AutoField(primary_key=True)
     fornecedor = models.CharField(max_length=30)
     cnpj = models.CharField(max_length=30)
     dpo = models.CharField(max_length=30)
@@ -53,6 +57,7 @@ class Cad_fornecedores(models.Model):
         return self.fornecedor
 
 class Cad_dpo(models.Model):
+    id = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=30)
     cpf = models.CharField(max_length=30)
     cargo = models.CharField(max_length=30)
@@ -68,6 +73,7 @@ class Cad_dpo(models.Model):
         return self.nome
 
 class Cad_dados_previos(models.Model):
+    id = models.AutoField(primary_key=True)
     questao_dados_previos = models.CharField(max_length=90)
     resposta = models.CharField(max_length=10)
     class Meta:
@@ -76,6 +82,7 @@ class Cad_dados_previos(models.Model):
         return self.questao_dados_previos
 
 class Cad_itens_auditaveis(models.Model):
+    id = models.AutoField(primary_key=True)
     questao_itens_auditaveis = models.CharField(max_length=90)
     il = models.IntegerField()
     icn = models.IntegerField()
@@ -93,12 +100,14 @@ class Cad_itens_auditaveis(models.Model):
 
     
 class Cad_fator_de_risco(models.Model):
+    id = models.AutoField(primary_key=True)
     questao_fator_de_risco = models.CharField(max_length=90)
     fator_de_risco = models.IntegerField()
     #fator_de_risco = Cad_itens_auditaveis.fr()
     ##CALCULO DO FATOR DE RISCO fr = (il ** 2 + icn ** 2)*((7-e) ** 2) 
 
 class Cad_Mapeamento(models.Model):
+    id = models.AutoField(primary_key=True)
     dado = models.CharField(max_length=30)
     tipo = models.CharField(max_length=30)
     fonte = models.CharField(max_length=30)
