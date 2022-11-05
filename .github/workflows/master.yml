@@ -24,8 +24,9 @@ jobs:
           **/.git*
           **/.git*/**
           **/node_modules/**
+          passenger_wsgi.py
           fileToExclude.txt
-          /core/asgi.py
-          /core/settings.py
-          /core/urls.py
-          /core/wsgi.py
+          core/asgi.py
+          core/settings.py
+          core/urls.py
+          core/wsgi.py
