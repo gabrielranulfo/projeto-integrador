@@ -1,8 +1,7 @@
-on :
-  push:
+on: push
     branches:
       - master
-name : 🚀 Deploy website
+name: 🚀 Deploy website on push
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -10,9 +9,9 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
-
+    
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      uses: SamKirkland/FTP-Deploy-Action@4.3.2
       with:
         server: ${{ secrets.netinto_host}}
         username: ${{ secrets.netinfo_user }}
