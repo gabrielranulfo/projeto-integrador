@@ -19,6 +19,10 @@ jobs:
         server: ${{ secrets.netinto_host}}
         username: ${{ secrets.netinfo_user }}
         password: ${{ secrets.netinfo_pass }}
-        local_dir: "./**"
-        remote_dir: "/home/netinfoi/projeto-integrador2/"
-        exlude: "./core/**"
+        server-dir: "/home/netinfoi/projeto-integrador2/"
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          fileToExclude.txt
+          /core/**.py
