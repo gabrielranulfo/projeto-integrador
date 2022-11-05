@@ -19,10 +19,13 @@ jobs:
         server: ftp.netinfo-informatica.com.br
         username: ${{ secrets.netinfo_user }}
         password: ${{ secrets.netinfo_pass }}
-        server-dir: "/home/netinfoi/projeto-integrador2/"
+        server-dir: "projeto-integrador2/"
         exclude: |
           **/.git*
           **/.git*/**
           **/node_modules/**
           fileToExclude.txt
-          /core/**.py
+          /core/asgi.py
+          /core/settings.py
+          /core/urls.py
+          /core/wsgi.py
