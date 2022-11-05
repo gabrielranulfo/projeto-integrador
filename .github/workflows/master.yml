@@ -19,7 +19,7 @@ jobs:
         server: ftp.netinfo-informatica.com.br
         username: ${{ secrets.netinfo_user }}
         password: ${{ secrets.netinfo_pass }}
-        server-dir: "projeto-integrador2/"
+        server-dir: "projeto-integrador/"
         exclude: |
           **/.git*
           **/.git*/**
