@@ -18,5 +18,4 @@ jobs:
         username: ${{ secrets.netinfo_user }}
         password: ${{ secrests.netinfo_pass }}
         server-dir: /home/netinfoi/projeto-integrador2/
-        exclude:
-          - '!/home/netinfoi/projeto-integrador2/core/**
+        exclude: '!/home/netinfoi/projeto-integrador2/core/**'
