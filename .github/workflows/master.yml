@@ -1,0 +1,22 @@
+on : push
+  push:
+    branches:
+      - master
+name : 🚀 Deploy website
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ${{ secrets.netinto_host}}
+        username: ${{ secrets.netinfo_user }}
+        password: ${{ secrests.netinfo_pass }}
+        server-dir: /home/netinfoi/projeto-integrador2/
+        exclude:
+          - '!/home/netinfoi/projeto-integrador2/core/**
