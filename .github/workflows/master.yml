@@ -17,13 +17,14 @@ jobs:
       run: |
         npm install
         npm run build
+
     
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
-        with:
-          server: ${{ secrets.netinto_host}}
-          username: ${{ secrets.netinfo_user }}
-          password: ${{ secrets.netinfo_pass }}
-          local_dir: "./**"
-          remote_dir: "/home/netinfoi/projeto-integrador2/"
-          exlude: "./core/**"
+      with:
+        server: ${{ secrets.netinto_host}}
+        username: ${{ secrets.netinfo_user }}
+        password: ${{ secrets.netinfo_pass }}
+        local_dir: "./**"
+        remote_dir: "/home/netinfoi/projeto-integrador2/"
+        exlude: "./core/**"
