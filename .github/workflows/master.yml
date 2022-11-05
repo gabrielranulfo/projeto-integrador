@@ -1,6 +1,6 @@
 on: push
     branches:
-      - master
+      master
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
@@ -17,4 +17,5 @@ jobs:
         username: ${{ secrets.netinfo_user }}
         password: ${{ secrets.netinfo_pass }}
         server-dir: /home/netinfoi/projeto-integrador2/
-        exclude: '!/home/netinfoi/projeto-integrador2/core/**'
+        exclude: |
+          /core/**
