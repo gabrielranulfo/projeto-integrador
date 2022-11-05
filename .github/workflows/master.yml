@@ -1,20 +1,21 @@
-name: CI -> Deploy to My website
+name: 🚀 Deploy
 on:
   push:
-    branches: master
+    branches: [ master ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       # Here is the deployment action
-      - name: Upload from public_html via FTP
-        uses: airvzxf/ftp-deployment-action@latest
+      - name: Upload from output to a remote server via FTP
+        uses: modern-dev/ftp-mirror@v2
         with:
           server: ${{ secrets.netinto_host}}
           username: ${{ secrets.netinfo_user }}
           password: ${{ secrets.netinfo_pass }}
-          server-dir: /home/netinfoi/projeto-integrador2/
-          exclude: |
-            /core/**
-
+          local_dir: "./**"
+          remote_dir: "/home/netinfoi/projeto-integrador2/"
+          delete: "false"
+          exlude: "./core/**"
