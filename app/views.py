@@ -255,10 +255,11 @@ def create_dados_previos(request):
     return redirect('dados_previos')
   
 @login_required(login_url="/login/")
+
 def itens_auditaveis(request):
     data = {}
     data['form'] = Form_itens_auditaveis
-    data['db'] = Cad_itens_auditaveis.objects.all() 
+    data['db'] = Cad_itens_auditaveis.objects.all()
     return render(request,"itens-auditaveis.html",data)
 
 @login_required(login_url="/login/")
