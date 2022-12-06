@@ -25,10 +25,10 @@ class Cad_empresa(models.Model):
 from django.db.models import Count
 class Cad_setores(models.Model):
     id = models.AutoField(primary_key=True)
-    setor_nome = models.CharField(max_length=30)
-    resposavel_setor = models.CharField(max_length=30)
-    cargo_setor = models.CharField(max_length=30)
-    contato_setor = models.CharField(max_length=30)
+    setor_nome = models.CharField(max_length=30,blank=True,null=True)
+    resposavel_setor = models.CharField(max_length=30,blank=True,null=True)
+    cargo_setor = models.CharField(max_length=30,blank=True,null=True)
+    contato_setor = models.CharField(max_length=30,blank=True,null=True)
     class Meta:
         verbose_name = 'Cadastro de Setores'
     def __str__(self):
